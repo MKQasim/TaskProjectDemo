@@ -1,0 +1,6 @@
+framework module Pods_TaskProjectDemo {
+  umbrella header "Pods-TaskProjectDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
