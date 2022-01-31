@@ -22,19 +22,19 @@ class KQHomeTableCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-//        profileImageView.roundCorners(corners: .allCorners, radius: profileImageView.frame.width/2)
+        profileImageView.roundCorners(corners: .allCorners, radius: profileImageView.frame.width/2)
         profileImageView.contentMode = .scaleToFill
         // Configure the view for the selected state
     }
     
-//    func configureCell(post:Post?){
-//        titleLbl.text = post?.title
-//        subTitleLbl.text = post?.byline
-//        detailsLbl.text = post?.perFacet?.first?.description.components(separatedBy: ",").first
-//        dateLbl.text = post?.publishedDate
-//        let url = URL(string: (post?.media?.first?.mediaMetadata?.first?.url)!)!
-//        self.profileImageView.load(url: url)
-//    }
+    func configureCell(post:Post?){
+        titleLbl.text = post?.title
+        subTitleLbl.text = post?.byline
+        detailsLbl.text = post?.perFacet?.first?.description.components(separatedBy: ",").first
+        dateLbl.text = post?.publishedDate
+        let url = URL(string: (post?.media?.first?.mediaMetadata?.first?.url)!)!
+        self.profileImageView.load(url: url)
+    }
 
     
 }

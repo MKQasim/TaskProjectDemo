@@ -16,7 +16,7 @@ enum KQLogin
 {
   // MARK: Use cases
 
-  enum Something
+  enum Api
   {
     struct Request
     {

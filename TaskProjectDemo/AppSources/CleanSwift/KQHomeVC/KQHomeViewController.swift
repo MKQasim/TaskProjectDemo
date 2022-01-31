@@ -15,7 +15,7 @@ import AVFoundation
 
 protocol KQHomeDisplayLogic: class
 {
-    func displayHomeList(viewModel: KQHome.Something.ViewModel)
+    func displayHomeList(viewModel: KQHome.Api.ViewModel)
 }
 
 class KQHomeViewController: UIViewController, KQHomeDisplayLogic
@@ -74,33 +74,45 @@ class KQHomeViewController: UIViewController, KQHomeDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        homeapiRequestCall()
+        homeApiRequestCall()
         tableViewinit()
+        setUpNavActions()
     }
     
-    // MARK: Do something
+    func setUpNavActions(){
+        let action = navbarView?.navBarAction = { actiontype in
+            switch  ActionType(rawValue: actiontype.rawValue) {
+                case .firstLeftButtonAction:print("menu firstLeftButtonAction");
+                case .secondLeftButtonAction:print("2nd secondLeftButtonAction")
+                case .rightFirstButtonAction:print("optional rightFirstButtonAction");
+                case .rightSecondButtonAction:print("search rightSecondButtonAction")
+            case .rightThirdButtonAction:print("more rightThirdButtonAction");
+                default:print("No One")
+            }
+            return self
+        }
+    }
+    // MARK: Home Api Request Call
     
-    
-    
-    func homeapiRequestCall()
+    func homeApiRequestCall()
     {
-        let request = KQHome.Something.Request(api_key: "api-key", value: AppShared.shared().token)
+        let request = KQHome.Api.Request(api_key: "api-key", value: AppShared.shared().token)
         interactor?.homeApiCall(request: request)
     }
     
-    func displayHomeList(viewModel: KQHome.Something.ViewModel)
+    func displayHomeList(viewModel: KQHome.Api.ViewModel)
     {
-         DispatchQueue.main.async() {
-             self.homeList = viewModel.homeModel
-             self.tableView.reloadData()
-             print(viewModel.homeModel?.count)
-             
+        DispatchQueue.main.async() {
+            self.homeList = viewModel.homeModel
+            self.tableView.reloadData()
+            print(viewModel.homeModel?.count)
+            
         }
         
     }
     
     func displayItemDetails(post:Post?) {
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             // your code here
             if var rout = self.router{
@@ -126,7 +138,7 @@ extension KQHomeViewController :UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: KQHomeTableCell.Identifier) as! KQHomeTableCell
-//        cell.configureCell(post: homeList?[indexPath.row])
+        cell.configureCell(post: homeList?[indexPath.row])
         return cell
     }
     

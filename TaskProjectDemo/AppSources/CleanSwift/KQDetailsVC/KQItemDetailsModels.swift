@@ -16,7 +16,7 @@ enum KQItemDetails
 {
   // MARK: Use cases
   
-  enum Something
+  enum Screen
   {
     struct Request
     {

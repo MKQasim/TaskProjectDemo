@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5254304227A7AE6C0036603A /* LoginHandelerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254304127A7AE6B0036603A /* LoginHandelerIntegrationTests.swift */; };
+		5263FCF827A7283100E47141 /* LoginApiResourceUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263FCF727A7283100E47141 /* LoginApiResourceUnitTests.swift */; };
 		5268124827A3DF5D005538A3 /* AppLocalNetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268124727A3DF5D005538A3 /* AppLocalNetworkRoute.swift */; };
 		5268124C27A3E0F5005538A3 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268124B27A3E0F5005538A3 /* AppTheme.swift */; };
 		5268124E27A3E122005538A3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268124D27A3E122005538A3 /* AppColors.swift */; };
@@ -117,6 +119,8 @@
 		0941F0557E9D628D1C34A42F /* Pods-TaskProjectDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskProjectDemoTests.release.xcconfig"; path = "Target Support Files/Pods-TaskProjectDemoTests/Pods-TaskProjectDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		19464D1041FC5A9970281FE0 /* Pods-TaskProjectDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskProjectDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-TaskProjectDemoTests/Pods-TaskProjectDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2299574DD080498F9D764CA9 /* Pods_TaskProjectDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskProjectDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5254304127A7AE6B0036603A /* LoginHandelerIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHandelerIntegrationTests.swift; sourceTree = "<group>"; };
+		5263FCF727A7283100E47141 /* LoginApiResourceUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiResourceUnitTests.swift; sourceTree = "<group>"; };
 		5268124727A3DF5D005538A3 /* AppLocalNetworkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalNetworkRoute.swift; sourceTree = "<group>"; };
 		5268124B27A3E0F5005538A3 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		5268124D27A3E122005538A3 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
@@ -277,7 +281,6 @@
 		5268124427A3DDAA005538A3 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				52B67BEB27A3D86B00BCFFDA /* Info.plist */,
 				52B67BDD27A3D86500BCFFDA /* AppDelegate.swift */,
 				52B67BDF27A3D86500BCFFDA /* SceneDelegate.swift */,
 			);
@@ -694,6 +697,7 @@
 		52B67BDC27A3D86500BCFFDA /* TaskProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				52B67BEB27A3D86B00BCFFDA /* Info.plist */,
 				5268129A27A3EEA0005538A3 /* AppShared */,
 				5268125127A3E2E4005538A3 /* AppCommen */,
 				5268128827A3EB5A005538A3 /* AppModels */,
@@ -714,6 +718,8 @@
 			children = (
 				52D43E7F27A6F55C0092264D /* LoginValidationUnitTests.swift */,
 				52B67BF427A3D86B00BCFFDA /* TaskProjectDemoTests.swift */,
+				5263FCF727A7283100E47141 /* LoginApiResourceUnitTests.swift */,
+				5254304127A7AE6B0036603A /* LoginHandelerIntegrationTests.swift */,
 			);
 			path = TaskProjectDemoTests;
 			sourceTree = "<group>";
@@ -1061,6 +1067,8 @@
 				526812ED27A40F42005538A3 /* KQHomeTableCell.swift in Sources */,
 				52D43E8027A6F55C0092264D /* LoginValidationUnitTests.swift in Sources */,
 				526812F627A41A33005538A3 /* NibExtension.swift in Sources */,
+				5254304227A7AE6C0036603A /* LoginHandelerIntegrationTests.swift in Sources */,
+				5263FCF827A7283100E47141 /* LoginApiResourceUnitTests.swift in Sources */,
 				526812F927A41A33005538A3 /* ListExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1163,7 +1171,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = SupportingFiles/Info;
+				INFOPLIST_FILE = TaskProjectDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1219,7 +1227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = SupportingFiles/Info;
+				INFOPLIST_FILE = TaskProjectDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1240,7 +1248,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TaskProjectDemo/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = TaskProjectDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = KQLoginStory;
@@ -1270,7 +1278,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TaskProjectDemo/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = TaskProjectDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = KQLoginStory;
@@ -1300,6 +1308,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskProjectDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamque.TaskProjectDemoTests;
@@ -1321,6 +1330,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskProjectDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamque.TaskProjectDemoTests;
@@ -1341,6 +1351,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskProjectDemoUITests/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamque.TaskProjectDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1360,6 +1371,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskProjectDemoUITests/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamque.TaskProjectDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

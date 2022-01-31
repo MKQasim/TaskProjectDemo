@@ -14,7 +14,7 @@ import UIKit
 
 protocol KQItemDetailsPresentationLogic
 {
-  func presentSomething(response: KQItemDetails.Something.Response)
+  func displayOnScreen(response: KQItemDetails.Screen.Response)
     
 }
 
@@ -24,9 +24,9 @@ class KQItemDetailsPresenter: KQItemDetailsPresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: KQItemDetails.Something.Response)
+  func displayOnScreen(response: KQItemDetails.Screen.Response)
   {
-      let viewModel = KQItemDetails.Something.ViewModel(post: response.post)
+      let viewModel = KQItemDetails.Screen.ViewModel(post: response.post)
     viewController?.displayItemDetails(viewModel: viewModel)
   }
 }

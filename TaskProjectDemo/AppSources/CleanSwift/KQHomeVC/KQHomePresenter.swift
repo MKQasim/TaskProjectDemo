@@ -14,18 +14,18 @@ import UIKit
 
 protocol KQHomePresentationLogic
 {
-  func presentSomething(response: KQHome.Something.Response)
+  func displayonScreen(response: KQHome.Api.Response)
 }
 
 class KQHomePresenter: KQHomePresentationLogic
 {
   weak var viewController: KQHomeDisplayLogic?
   
-  // MARK: Do something
+  // MARK: Display on Screen
   
-  func presentSomething(response: KQHome.Something.Response)
+  func displayonScreen(response: KQHome.Api.Response)
   {
-      let viewModel = KQHome.Something.ViewModel(homeModel: response.homeModel?.results)
+      let viewModel = KQHome.Api.ViewModel(homeModel: response.homeModel?.results)
       viewController?.displayHomeList(viewModel: viewModel)
   }
 }

@@ -14,7 +14,7 @@ import UIKit
 
 protocol KQItemDetailsDisplayLogic: class
 {
-    func displayItemDetails(viewModel: KQItemDetails.Something.ViewModel)
+    func displayItemDetails(viewModel: KQItemDetails.Screen.ViewModel)
 }
 
 class KQItemDetailsViewController: UIViewController, KQItemDetailsDisplayLogic
@@ -71,10 +71,10 @@ class KQItemDetailsViewController: UIViewController, KQItemDetailsDisplayLogic
         super.viewDidLoad()
         profileImageView.roundCorners(corners: .allCorners, radius: profileImageView.frame.width/2)
         profileImageView.contentMode = .scaleToFill
-        doSomething()
+        homeDataSettings()
     }
     
-    // MARK: Do something
+    // MARK: IBOutlet
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var publishedDateLbl: UILabel!
@@ -83,13 +83,14 @@ class KQItemDetailsViewController: UIViewController, KQItemDetailsDisplayLogic
     @IBOutlet weak var sectionLbl: UILabel!
     @IBOutlet weak var TypeLbl: UILabel!
     @IBOutlet weak var ByLineLbl: UILabel!
-    func doSomething()
+    
+    func homeDataSettings()
     {
-        let request = KQItemDetails.Something.Request()
-        interactor?.doSomething(request: request)
+        let request = KQItemDetails.Screen.Request()
+        interactor?.ItemDetailsData(request: request)
     }
     
-    func displayItemDetails(viewModel: KQItemDetails.Something.ViewModel)
+    func displayItemDetails(viewModel: KQItemDetails.Screen.ViewModel)
     {
         configureDetails(post: viewModel.post)
     }

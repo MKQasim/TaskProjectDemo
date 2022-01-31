@@ -14,7 +14,7 @@ import UIKit
 
 protocol KQLoginPresentationLogic
 {
-    func presentSomething(response: KQLogin.Something.Response)
+    func displayOnScreen(response: KQLogin.Api.Response)
     func presentHome()
     func presentSkip()
 }
@@ -23,18 +23,16 @@ class KQLoginPresenter: KQLoginPresentationLogic
 {
   weak var viewController: KQLoginDisplayLogic?
   
-  // MARK: Do something
+  // MARK: Display On Screen
   
-  func presentSomething(response: KQLogin.Something.Response)
+  func displayOnScreen(response: KQLogin.Api.Response)
   {
    if response.success{
         guard let result = response.userLogin.result else {return}
         guard let user = result.values.first else {return}
         let newUser = User(serverUser: user, completed: true)
-        let viewModel = KQLogin.Something.ViewModel(user:newUser)
+        let viewModel = KQLogin.Api.ViewModel(user:newUser)
         viewController?.displaySomething(viewModel: viewModel)
-    }else{
-
     }
   }
     func presentHome() {

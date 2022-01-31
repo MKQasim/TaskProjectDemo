@@ -14,7 +14,7 @@ import UIKit
 
 protocol KQItemDetailsBusinessLogic
 {
-    func doSomething(request: KQItemDetails.Something.Request)
+    func ItemDetailsData(request: KQItemDetails.Screen.Request)
 }
 
 protocol KQItemDetailsDataStore
@@ -28,18 +28,16 @@ class KQItemDetailsInteractor: KQItemDetailsBusinessLogic, KQItemDetailsDataStor
     var post: Post?
     var presenter: KQItemDetailsPresentationLogic?
     var worker: KQItemDetailsWorker?
-    //var name: String = ""
     
-    // MARK: Do something
+    // MARK: Item Details Data
     
-    func doSomething(request: KQItemDetails.Something.Request)
+    func ItemDetailsData(request: KQItemDetails.Screen.Request)
     {
         worker = KQItemDetailsWorker()
         worker?.doSomeWork()
         if let post = post {
-            let response = KQItemDetails.Something.Response(post: post)
-            presenter?.presentSomething(response: response)
+            let response = KQItemDetails.Screen.Response(post: post)
+            presenter?.displayOnScreen(response: response)
         }
-        
     }
 }

@@ -34,7 +34,7 @@ enum KQHome
 {
   // MARK: Use cases
 
-  enum Something
+  enum Api
   {
     struct Request
     {

@@ -12,7 +12,7 @@ class LoginValidationUnitTests: XCTestCase {
 
 
     func testLogin_Worker_Validation_With_EmptyString_Returns_Validations_Failure(){
-        let request = KQLogin.Something.Request(email: "", password: "")
+        let request = KQLogin.Api.Request(email: "", password: "")
         let validationResponse = KQLoginWorker().validateInputs(request: request)
         XCTAssertFalse(validationResponse.isValidate)
         XCTAssertNotNil(validationResponse.message)
@@ -20,7 +20,7 @@ class LoginValidationUnitTests: XCTestCase {
     }
     
     func testLogin_Worker_Validation_With_EmptyEmail_Returns_Validations_Failure(){
-        let request = KQLogin.Something.Request(email: "", password: "12345678")
+        let request = KQLogin.Api.Request(email: "", password: "12345678")
         let validationResponse = KQLoginWorker().validateInputs(request: request)
         XCTAssertFalse(validationResponse.isValidate)
         XCTAssertNotNil(validationResponse.message)
@@ -28,7 +28,7 @@ class LoginValidationUnitTests: XCTestCase {
     }
     
     func testLogin_Worker_Validation_With_EmptyPassword_Returns_Validations_Failure(){
-        let request = KQLogin.Something.Request(email: "kamqasim1@gmail.com", password: "")
+        let request = KQLogin.Api.Request(email: "kamqasim1@gmail.com", password: "")
         let validationResponse = KQLoginWorker().validateInputs(request: request)
         XCTAssertFalse(validationResponse.isValidate)
         XCTAssertNotNil(validationResponse.message)

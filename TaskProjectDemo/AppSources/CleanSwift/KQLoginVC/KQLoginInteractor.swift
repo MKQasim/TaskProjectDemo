@@ -14,7 +14,7 @@ import UIKit
 
 protocol KQLoginBusinessLogic
 {
-    func loginRequest(request: KQLogin.Something.Request)
+    func loginRequest(request: KQLogin.Api.Request)
     func loginAction()
     func skipAction()
 }
@@ -31,9 +31,9 @@ class KQLoginInteractor: KQLoginBusinessLogic, KQLoginDataStore
     var worker: KQLoginWorker?
     var userBusiness = UserBusiness()
 
-    // MARK: Do something
+    // MARK: loginRequest
 
-    func loginRequest(request: KQLogin.Something.Request)
+    func loginRequest(request: KQLogin.Api.Request)
     {
         worker = KQLoginWorker()
 
@@ -44,7 +44,7 @@ class KQLoginInteractor: KQLoginBusinessLogic, KQLoginDataStore
                           "password": "12345678"]
             self.userLogin(parameters: params) { (loginModel, error) in
                 guard let loginModel = loginModel else {return}
-                var response : KQLogin.Something.Response = KQLogin.Something.Response(success: true, message:
+                var response : KQLogin.Api.Response = KQLogin.Api.Response(success: true, message:
                     "",userLogin:loginModel)
                 guard let result = loginModel.result?.values else {return}
                 guard let serverUser = result.first else {return}
@@ -53,7 +53,7 @@ class KQLoginInteractor: KQLoginBusinessLogic, KQLoginDataStore
                 Defaults.save("\(userId)", authToken: token)
                 self.user = User(serverUser: serverUser, completed: true)
                 print(self.user)
-                self.presenter?.presentSomething(response: response)
+                self.presenter?.displayOnScreen(response: response)
             }
         }
     }

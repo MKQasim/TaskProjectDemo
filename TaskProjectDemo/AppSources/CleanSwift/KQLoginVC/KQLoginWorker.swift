@@ -14,7 +14,7 @@ import UIKit
 
 class KQLoginWorker
 {
-    func validateInputs(request : KQLogin.Something.Request) -> (isValidate: Bool, message: String) {
+    func validateInputs(request : KQLogin.Api.Request) -> (isValidate: Bool, message: String) {
         
         
         if let empty = checkEmpty(email: request.email, password: request.password){

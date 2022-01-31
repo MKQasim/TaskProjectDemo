@@ -17,7 +17,7 @@ import IQKeyboardManagerSwift
 
 protocol KQLoginDisplayLogic: class
 {
-    func displaySomething(viewModel: KQLogin.Something.ViewModel)
+    func displaySomething(viewModel: KQLogin.Api.ViewModel)
     func displayHome()
     func displaySkip()
     
@@ -130,9 +130,9 @@ class KQLoginViewController: UIViewController, KQLoginDisplayLogic
 
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         emailTextField.resignFirstResponder()
-        UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseOut], animations: {
-            self.logoImageView.transform = CGAffineTransform(translationX: 0, y: 30)
-            self.logoImageView.alpha = 1
+        UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseOut], animations: { [weak self] in
+            self?.logoImageView.transform = CGAffineTransform(translationX: 0, y: 30)
+            self?.logoImageView.alpha = 1
         }, completion: nil)
     }
 
@@ -200,7 +200,7 @@ class KQLoginViewController: UIViewController, KQLoginDisplayLogic
 
     func doValidation()
     {
-        let request = KQLogin.Something.Request(email: emailTextField.text!, password: passwordTextField.text!)
+        let request = KQLogin.Api.Request(email: emailTextField.text!, password: passwordTextField.text!)
         interactor?.loginRequest(request: request)
     }
 
@@ -217,7 +217,7 @@ class KQLoginViewController: UIViewController, KQLoginDisplayLogic
     }
     // MARK: Display On Controler
 
-    func displaySomething(viewModel: KQLogin.Something.ViewModel)
+    func displaySomething(viewModel: KQLogin.Api.ViewModel)
     {
        
         //nameTextField.text = viewModel.name
