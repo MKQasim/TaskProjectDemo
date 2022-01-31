@@ -246,7 +246,7 @@ extension UIView {
     // In order to create computed properties for extensions, we need a key to
     // store and access the stored property
 
-    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+    open func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
@@ -355,7 +355,7 @@ extension UIView {
     }
 }
 extension UIImageView {
-    func load(url: URL) {
+   open func load(url: URL) {
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {

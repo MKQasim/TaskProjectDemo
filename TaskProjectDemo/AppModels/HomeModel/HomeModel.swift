@@ -23,7 +23,7 @@ struct HomeModel: Codable , Response {
 }
 
 // MARK: - Post
-struct Post: Codable {
+public struct Post: Codable {
     var uri: String?
     var url: String?
     var id, assetID: Int?

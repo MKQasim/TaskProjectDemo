@@ -36,36 +36,8 @@ class KQItemDetailsRouter: NSObject, KQItemDetailsRoutingLogic, KQItemDetailsDat
         guard var destinationDS = destinationRouter.dataStore else {return}
         guard let sourceDS = dataStore else {return}
 
-//        passDataToSomewhere(source: sourceDS as! KQHomeDataStore, destination: &destinationDS)
-//        navigateToSomewhere(source: viewController!, destination: destinationVC)
     }
     
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-//
-//    func routeToSkip(segue: UIStoryboardSegue?) {
-//        guard let destinationVC = Storyboard.instatiate(view: KQHomeViewController.self) else{return}
-//        guard let destinationRouter = destinationVC.router else {return}
-//        guard var destinationDS = destinationRouter.dataStore else {return}
-//        guard let sourceDS = dataStore else {return}
-//
-//        passDataToSomewhere(source: sourceDS, destination: &destinationDS)
-//        navigateToSomewhere(source: viewController!, destination: destinationVC)
-//    }
 
     // MARK: Navigation
 

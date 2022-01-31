@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class KQHomeTableCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
@@ -26,16 +27,5 @@ class KQHomeTableCell: UITableViewCell {
         profileImageView.contentMode = .scaleToFill
         // Configure the view for the selected state
     }
-    
-    func configureCell(post:Post?){
-        titleLbl.text = post?.title
-        subTitleLbl.text = post?.byline
-        detailsLbl.text = post?.perFacet?.first?.description.components(separatedBy: ",").first
-        dateLbl.text = post?.publishedDate
-        let url = URL(string: (post?.media?.first?.mediaMetadata?.first?.url)!)!
-        self.profileImageView.load(url: url)
-    }
-
-    
 }
 

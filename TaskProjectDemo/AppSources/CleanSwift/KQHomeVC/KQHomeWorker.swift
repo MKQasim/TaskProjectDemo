@@ -16,7 +16,6 @@ class KQHomeWorker
 {
     // RequestValidation
   func homeApiRequest(completion:@escaping((_ message:HomeModel?,_ error:Error?) -> ()))
-  {
-//             
+  {            
   }
 }

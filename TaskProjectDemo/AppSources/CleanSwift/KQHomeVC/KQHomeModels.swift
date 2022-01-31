@@ -12,24 +12,6 @@
 
 import UIKit
 
-//enum KQHome
-//{
-//  // MARK: Use cases
-//
-//  enum Something
-//  {
-//    struct Request
-//    {
-//    }
-//    struct Response
-//    {
-//    }
-//    struct ViewModel
-//    {
-//    }
-//  }
-//}
-
 enum KQHome
 {
   // MARK: Use cases

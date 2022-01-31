@@ -106,9 +106,7 @@ class KQHomeViewController: UIViewController, KQHomeDisplayLogic
             self.homeList = viewModel.homeModel
             self.tableView.reloadData()
             print(viewModel.homeModel?.count)
-            
         }
-        
     }
     
     func displayItemDetails(post:Post?) {
@@ -138,8 +136,17 @@ extension KQHomeViewController :UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: KQHomeTableCell.Identifier) as! KQHomeTableCell
-        cell.configureCell(post: homeList?[indexPath.row])
+        self.configureCell(cell: cell, post: homeList?[indexPath.row])
         return cell
+    }
+    
+    func configureCell(cell: KQHomeTableCell , post:Post?){
+        cell.titleLbl.text = post?.title
+        cell.subTitleLbl.text = post?.byline
+        cell.detailsLbl.text = post?.perFacet?.first?.description.components(separatedBy: ",").first
+        cell.dateLbl.text = post?.publishedDate
+        let url = URL(string: (post?.media?.first?.mediaMetadata?.first?.url)!)!
+        cell.profileImageView.load(url: url)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

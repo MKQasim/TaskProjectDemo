@@ -42,13 +42,6 @@ class KQHomeInteractor: KQHomeBusinessLogic, KQHomeDataStore
             self.presenter?.displayonScreen(response: response)
         })
     }
-    
-    
-    
-    
-    
-    
- 
-    
+
 }
 
