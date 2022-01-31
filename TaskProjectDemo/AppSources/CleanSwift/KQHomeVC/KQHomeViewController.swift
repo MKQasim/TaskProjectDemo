@@ -145,6 +145,8 @@ extension KQHomeViewController :UITableViewDelegate , UITableViewDataSource{
         cell.subTitleLbl.text = post?.byline
         cell.detailsLbl.text = post?.perFacet?.first?.description.components(separatedBy: ",").first
         cell.dateLbl.text = post?.publishedDate
+        cell.profileImageView.roundCorners(corners: .allCorners, radius: cell.profileImageView.frame.width/2)
+        cell.profileImageView.contentMode = .scaleToFill
         let url = URL(string: (post?.media?.first?.mediaMetadata?.first?.url)!)!
         cell.profileImageView.load(url: url)
     }

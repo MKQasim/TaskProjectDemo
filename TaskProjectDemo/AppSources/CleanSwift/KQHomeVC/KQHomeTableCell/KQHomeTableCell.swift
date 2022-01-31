@@ -23,8 +23,6 @@ class KQHomeTableCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        profileImageView.roundCorners(corners: .allCorners, radius: profileImageView.frame.width/2)
-        profileImageView.contentMode = .scaleToFill
         // Configure the view for the selected state
     }
 }
